@@ -52,7 +52,6 @@ section {
   font-size: 40px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  /* text-align: center; */
 }
 
 .title-wrap {
@@ -189,7 +188,6 @@ section {
 
 
 .about-us__title {
-  /* text-align: left; */
   letter-spacing: normal;
 }
 
@@ -282,6 +280,7 @@ section {
   display: flex;
   flex-direction: column;
   margin-bottom: 40px;
+  gap: 20px;
 }
 
 /* .portfolio__media > * + * {
@@ -321,7 +320,7 @@ section {
   height: 250px;
   display: flex;
   gap: 20px;
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 .portfolio__img {
