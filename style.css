@@ -439,6 +439,19 @@ section {
   cursor: pointer;
 }
 
+.video__play-btn:hover {
+  animation: scale-change 0.5s infinite alternate;
+}
+
+@keyframes scale-change {
+  form {
+    scale: 1;
+  }
+  to {
+    scale: 1.2;
+  }
+}
+
 .portfolio__row {
   height: 250px;
   display: flex;
