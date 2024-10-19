@@ -4,6 +4,10 @@
   display: none !important;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 html { 
   scroll-behavior: smooth;
 }
@@ -171,6 +175,66 @@ section {
 }
 
 /* ---------------------- header --------------------- */
+
+
+.menu-icon {
+  width: 40px;
+  height: 30px;
+  position: relative;
+  border: none;
+  padding: 0;
+  display: none;
+  background-color: inherit;
+}
+
+.menu-icon::after, .menu-icon::before {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.menu-icon::before {
+  top: 0;
+  transition: transform 0.3s, top 0.3s 0.3s;
+}
+
+.menu-icon::after {
+  bottom: 0;
+  transition: transform 0.3s, bottom 0.3s 0.3s;
+}
+
+.menu-icon__line, .menu-icon::after, .menu-icon::before  {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+  border-radius: 40px;
+  
+}
+
+.menu-icon--active .menu-icon__line {
+  display: none;
+}
+
+.menu-icon--active::before {
+  transform: translateY(-50%) rotate(45deg);
+  top: 50%;
+  transition: top 0.3s, transform 0.3s 0.3s;
+}
+.menu-icon--active::after {
+  transform: translateY(50%) rotate(-45deg);
+  bottom: 50%;
+  transition: bottom 0.3s, transform 0.3s 0.3s;
+}
+
+.header .socials {
+  display: none;
+}
+
+
+
+
+
 
 .header {
   padding: 20px 0;
@@ -727,9 +791,6 @@ img {
   .container {
     width: 100%;
   }
-
-  
-
   .about-us__title {
     font-size: 30px;
   }
@@ -740,21 +801,60 @@ img {
 }
 
 @media (max-width:1000px) {
+  
+  .header {
+    position: fixed;
+    background-color: #fff;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  }
+
+  .header-mobile {
+    min-height: 100vh;
+  }
+
+  .header-mobile .header__nav {
+    display: block;
+  }
+
+  .header-mobile .header__container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    padding-right: 0;
+  }
+
+  .header-mobile .header__list {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .header-mobile .header__list a {
+    padding: 10px 30px 10px 0;
+    display: inline-block;
+  }
+
+  .header-mobile .socials {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    right: 25px;
+    top: 15px;
+  }
+
+
+  
   .header__nav {
     display: none;
   }
 
-  .header {
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 100;
-    width: 100%;
-    background-color: #fff;
-    box-shadow: 0px 0px 5px;
-  }
-
-  .header button {
+  .header__btn {
     display: none;
   }
 
