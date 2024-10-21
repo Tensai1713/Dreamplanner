@@ -817,6 +817,7 @@ img {
   align-items: center;
   justify-content: center;
   z-index: 100;
+  padding: 0 15px;
 }
 
 .modal {
