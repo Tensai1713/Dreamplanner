@@ -27,3 +27,48 @@ btnModalExit.addEventListener('click',() => {
     modal.classList.add('none');
     body.classList.remove('no-scroll');
 })
+
+const playVideoBtn = document.querySelector('.video__play-btn')
+const video = document.querySelector('.video__media')
+const videoControls = document.querySelector('.video__play')
+const pauseVideoBtn = document.querySelector('.video__pause-btn')
+const portfolioVideo = document.querySelector('.portfolio__video')
+playVideoBtn.addEventListener('click', () => {
+
+  if (video.paused) {
+    video.play();
+    videoControls.classList.add('none');
+    pauseVideoBtn.classList.add('none')
+  }
+  else {
+    video.pause();
+  }
+  
+});
+
+video.addEventListener('click', () => {
+  if (video.paused) {
+    video.play();
+    videoControls.classList.add('none');
+  }
+  else {
+    video.pause();
+    videoControls.classList.remove('none');
+    pauseVideoBtn.classList.add('none');
+  }
+});
+
+portfolioVideo.addEventListener('mouseenter', () => {
+  if(videoControls.classList.contains('none'))
+  {
+    pauseVideoBtn.classList.remove('none');
+  }
+  else {
+    pauseVideoBtn.classList.add('none');
+  }
+  
+})
+
+portfolioVideo.addEventListener('mouseleave', () => {
+    pauseVideoBtn.classList.add('none');
+})
